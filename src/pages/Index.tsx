@@ -87,7 +87,7 @@ export default function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-primary">SOURCE MAPS</div>
+          <div className="text-2xl font-bold text-primary text-glow">SOURCE</div>
           <div className="hidden md:flex gap-6">
             {['home', 'portfolio', 'pricing', 'about', 'process', 'contact'].map((section) => (
               <button
@@ -109,8 +109,9 @@ export default function Index() {
         </div>
       </nav>
 
-      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
-        <div className="container mx-auto text-center animate-fade-in">
+      <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 bg-matrix relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://cdn.poehali.dev/files/93216500-f39a-433a-9c60-65cc1ecc5f64.png')] bg-cover bg-center opacity-10" />
+        <div className="container mx-auto text-center animate-fade-in relative z-10">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 text-glow">
             СОЗДАНИЕ КАРТ
             <br />
@@ -124,7 +125,7 @@ export default function Index() {
               <Icon name="Map" className="mr-2" size={20} />
               Смотреть работы
             </Button>
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="text-lg">
+            <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground">
               <Icon name="MessageSquare" className="mr-2" size={20} />
               Связаться
             </Button>
